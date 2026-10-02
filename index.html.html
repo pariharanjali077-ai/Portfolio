@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANJALI PARIHAR — Graphic Designer & Brand Strategist</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome & Phosphor Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-maroon-dark: #fffafa;
+            --bg-maroon-main: #7A1725;
+            --bg-cream-main: #FFFDF5;
+            --bg-[#FFFDF5]: #F8F3E6;
+            --bg-pink-grid: #F8D3D5;
+            --line-pink-grid: #E8A8AC;
+            --bg-olive-grid: #828E58;
+            --line-olive-grid: #6B7644;
+            --bg-periwinkle: #C5D0F5;
+            --bg-butter-yellow: #F7E7A3;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-maroon-dark);
+            color: #262626;
+            overflow-x: hidden;
+        }
+
+        .font-serif-title {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .font-handwriting {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* --- BACKGROUND GRID PATTERNS --- */
+        .pink-grid-pattern {
+            background-color: var(--bg-pink-grid);
+            background-image: 
+                linear-gradient(to right, rgba(200, 90, 100, 0.22) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, rgba(200, 90, 100, 0.22) 1.5px, transparent 1.5px);
+            background-size: 26px 26px;
+        }
+
+        .olive-grid-pattern {
+            background-color: var(--bg-olive-grid);
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+        }
+
+        /* --- SCALLOPED & WAVY BORDER SHAPES --- */
+        .scalloped-box {
+            border: 3.5px solid var(--bg-maroon-main);
+            border-radius: 28px;
+            box-shadow: 6px 6px 0px 0px rgba(88, 14, 24, 0.9);
+        }
+
+        /* Scalloped Wavy Frame Clip-Path */
+        .wavy-scallop-border {
+            border: 4px solid #7A1725;
+            border-radius: 36px;
+            box-shadow: 8px 8px 0px 0px #580E18;
+            position: relative;
+        }
+
+        /* Stamp Edge Styling */
+        .stamp-edge-border {
+            border: 8px solid #7A1725;
+            outline: 3px dashed #FFFDF5;
+            outline-offset: -7px;
+            box-shadow: 8px 8px 0px 0px #580E18;
+        }
+
+        /* Custom Tape Visual Effect */
+        .washi-tape {
+            background-color: rgba(255, 255, 255, 0.65);
+            border: 1px dashed rgba(122, 23, 37, 0.3);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+        }
+
+        /* Continuous Marquee Animation */
+        .marquee-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 2rem;
+            animation: marqueeScroll 22s linear infinite;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Floating & Bobbing Animations for Elements */
+        @keyframes bobbingSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        @keyframes floatSubtle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .animate-bobbing {
+            animation: bobbingSlow 4.5s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: floatSubtle 3s ease-in-out infinite;
+        }
+
+        /* Interactive Card Elevate & Tilt */
+        .scrapbook-card {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .scrapbook-card:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 10px 14px 0px 0px #580E18 !important;
+            z-index: 20;
+        }
+
+        /* Custom Modal Transition */
+        .modal-active {
+            display: flex !important;
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 11px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #580E18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F8D3D5;
+            border-radius: 6px;
+            border: 2px solid #580E18;
+        }
+    </style>
+</head>
+<body class="py-4 sm:py-8 px-2 sm:px-6 md:px-10 max-w-6xl mx-auto selection:bg-[#F8D3D5] selection:text-[#7A1725]">
+
+    <!-- STICKY NAVBAR -->
+    <nav class="sticky top-4 z-50 bg-[#FFFDF5]/95 backdrop-blur-md px-4 sm:px-6 py-3 rounded-full border-3 border-[#7A1725] shadow-[4px_4px_0px_0px_#580E18] flex items-center justify-between mb-8 max-w-5xl mx-auto">
+        <a href="#" class="flex items-center gap-2 group">
+            <span class="w-8 h-8 rounded-full bg-[#7A1725] text-[#FFFDF5] flex items-center justify-center font-bold text-sm group-hover:rotate-12 transition-transform">✦</span>
+            <span class="font-serif-title font-bold text-lg sm:text-xl text-[#7A1725] tracking-tight">ANJALI PARIHAR</span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center gap-5 text-xs font-bold text-[#7A1725] uppercase tracking-wider">
+            <a href="#about" class="hover:text-[#580E18] hover:underline decoration-2">About</a>
+            <a href="#skills" class="hover:text-[#580E18] hover:underline decoration-2">Skills</a>
+            <a href="#experience" class="hover:text-[#580E18] hover:underline decoration-2">Journey</a>
+            <a href="#education" class="hover:text-[#580E18] hover:underline decoration-2">Education</a>
+            <a href="#portfolio" class="hover:text-[#580E18] hover:underline decoration-2">Portfolio</a>
+            <a href="#websites" class="hover:text-[#580E18] hover:underline decoration-2">Websites</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="#contact" class="bg-[#7A1725] hover:bg-[#580E18] text-[#FFFDF5] text-xs font-bold px-4 py-2 rounded-full border-2 border-[#580E18] shadow-[2px_2px_0px_0px_#580E18] transition-all hover:translate-x-0.5 hover:translate-y-0.5 flex items-center gap-1.5">
+                <span>LET'S TALK</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-[#7A1725] text-xl p-1 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden fixed inset-x-4 top-20 z-40 bg-[#FFFDF5] border-3 border-[#7A1725] rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-center font-bold text-[#7A1725]">
+        <a href="#about" onclick="toggleMobileMenu()" class="py-2 border-b border-red-100">About</a>
+        <a href="#skills" onclick="toggleMobileMenu()" class="py-2 border-b border-red-100">Skills</a>
+        <a href="#experience" onclick="toggleMobileMenu()" class="py-2 border-b border-red-100">Journey</a>
+        <a href="#education" onclick="toggleMobileMenu()" class="py-2 border-b border-red-100">Education</a>
+        <a href="#portfolio" onclick="toggleMobileMenu()" class="py-2 border-b border-red-100">Portfolio</a>
+        <a href="#websites" onclick="toggleMobileMenu()" class="py-2 border-b border-red-100">Websites</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="py-2 bg-[#F8D3D5] rounded-xl text-[#7A1725]">Contact Me</a>
+    </div>
+
+
+    <!-- MAIN SCRAPBOOK CONTAINER -->
+    <main class="bg-[#FFFDF5] rounded-[36px] overflow-hidden border-4 border-[#580E18] shadow-[12px_16px_0px_0px_rgba(0,0,0,0.35)] relative">
+
+        <!-- SECTION 01: HERO SECTION -->
+        <section id="hero" class="pink-grid-pattern p-6 sm:p-10 md:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <!-- Top Badges Row -->
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-8">
+                <div class="inline-flex items-center gap-2 bg-[#7A1725] text-[#FFFDF5] px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest border-2 border-[#580E18] shadow-[3px_3px_0px_0px_#580E18] animate-bobbing">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i>
+                    <span>THE CREATIVE STUDIO</span>
+                </div>
+                <div class="bg-[#F8F3E6] border-2 border-[#7A1725] px-4 py-1.5 rounded-full text-xs font-bold text-[#7A1725] shadow-sm">
+                    ✦ BBA STUDENT & GRAPHIC DESIGNER
+                </div>
+            </div>
+
+            <!-- Hero Layout Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Title Card -->
+                <div class="lg:col-span-7 bg-[#FFFDF5] border-4 border-[#7A1725] p-6 sm:p-9 rounded-[32px] shadow-[8px_8px_0px_0px_#7A1725] space-y-5 relative">
+                    <div class="washi-tape absolute -top-3 left-10 w-28 h-6 rotate-[-2deg]"></div>
+
+                    <div class="space-y-1">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#F8D3D5] px-3 py-1 rounded-md border border-[#7A1725]">
+                            1:1 VISUAL STRATEGY & DESIGN
+                        </span>
+                        <h1 class="font-serif-title text-3xl sm:text-5xl lg:text-6xl text-[#580E18] leading-[1.08] pt-2">
+                            ANJALI PARIHAR
+                        </h1>
+                        <p class="font-handwriting text-2xl sm:text-3xl text-[#7A1725] font-bold">
+                            "Turning ideas into visuals."
+                        </p>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                        I'm Anjali, a passionate graphic designer and BBA student at IGNOU, pursuing creative design training at MAAC Institute. My work blends business insight with artistic vision—helping brands and individuals communicate through clean, creative, and visually engaging designs.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-4">
+                        <a href="#portfolio" class="bg-[#7A1725] hover:bg-[#580E18] text-[#FFFDF5] text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[4px_4px_0px_0px_#580E18] transition-all hover:translate-x-0.5 hover:translate-y-0.5 flex items-center gap-2">
+                            <span>EXPLORE MY WORK</span>
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                        </a>
+                        <a href="#about" class="bg-[#F7E7A3] hover:bg-yellow-300 text-[#580E18] border-2 border-[#7A1725] text-xs font-extrabold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-[4px_4px_0px_0px_#7A1725] transition-all">
+                            ABOUT ME ↓
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Frame with Real-Time Upload Capability -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+                    
+                    <div class="relative bg-[#F8F3E6] p-4 border-4 border-[#7A1725] rounded-[32px] shadow-[10px_10px_0px_0px_#580E18] w-full max-w-sm rotate-2 hover:rotate-0 transition-transform duration-300 group">
+                        
+                        <!-- Floating Decorative Stickers -->
+                        <div class="absolute -top-5 -right-4 bg-[#F7E7A3] text-[#580E18] border-2 border-[#7A1725] px-3 py-1 rounded-full text-xs font-bold shadow-md z-10 animate-float">
+                            🍸 Fresh Design
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-[#828E58] text-white border-2 border-[#580E18] px-3 py-1 rounded-full text-xs font-bold shadow-md z-10">
+                            ✦ MAAC Trained
+                        </div>
+
+                        <!-- Image Display Frame -->
+                        <div class="overflow-hidden rounded-2xl border-2 border-[#7A1725] bg-[#F8D3D5] relative group">
+                            <img id="userImageDisplay" 
+                                 src="black.png" 
+                                 alt="Anjali Parihar - Graphic Designer" 
+                                 class="w-full h-80 object-cover object-center filter contrast-105 group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x700/7A1725/FFFDF5?text=Anjali+Parihar'">
+                        </div>
+
+                        <!-- Interactive Image Uploader Control -->
+                        <div class="mt-3 text-center">
+                            <label for="imageUploadInput" class="inline-flex items-center gap-2 cursor-pointer bg-[#7A1725] hover:bg-[#580E18] text-[#FFFDF5] px-4 py-2 rounded-full text-xs font-bold transition-colors shadow">
+                                <i class="fa-solid fa-camera"></i>
+                                <span>+ UPLOAD YOUR OWN PHOTO</span>
+                            </label>
+                            <input type="file" id="imageUploadInput" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                            <p class="text-[10px] text-gray-500 mt-1 font-mono">Default path: images/anjali.jpg</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- MARQUEE TICKER 1 -->
+        <section class="bg-[#7A1725] text-[#FFFDF5] py-3.5 border-b-4 border-[#580E18] marquee-wrapper font-serif-title text-sm sm:text-base tracking-widest uppercase">
+            <div class="marquee-track">
+                <span>✦ GRAPHIC DESIGN</span> <span>• BRAND IDENTITY</span> <span>✦ SOCIAL MEDIA CONTENT</span> <span>• POSTER DESIGN</span> <span>✦ PACKAGING</span> <span>• UI / DIGITAL DESIGN</span>
+                <span>✦ GRAPHIC DESIGN</span> <span>• BRAND IDENTITY</span> <span>✦ SOCIAL MEDIA CONTENT</span> <span>• POSTER DESIGN</span> <span>✦ PACKAGING</span> <span>• UI / DIGITAL DESIGN</span>
+            </div>
+        </section>
+
+
+        <!-- SECTION 02: ABOUT ME SECTION -->
+        <section id="about" class="bg-[#C5D0F5]/30 p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-10">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#FFFDF5] px-4 py-1.5 rounded-full border-2 border-[#7A1725] shadow-sm">
+                    WHO AM I?
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#580E18]">
+                    Blending Business Insight With Creative Vision
+                </h2>
+                <p class="font-handwriting text-2xl text-[#7A1725] font-semibold">
+                    "Good design should look beautiful and communicate an idea clearly."
+                </p>
+            </div>
+
+            <!-- Editorial Bio Card -->
+            <div class="bg-[#FFFDF5] border-4 border-[#7A1725] p-6 sm:p-10 rounded-[32px] shadow-[8px_8px_0px_0px_#7A1725] max-w-4xl mx-auto space-y-6 relative mb-12">
+                <div class="washi-tape absolute -top-3 right-12 w-32 h-6 rotate-2"></div>
+                
+                <p class="text-sm sm:text-base text-gray-800 leading-relaxed">
+                    I’m <b>Anjali Parihar</b>, a passionate Graphic Designer with an interest in creating clean, creative, and visually engaging designs. I’m currently pursuing my BBA from <b>IGNOU</b> alongside professional creative design training at <b>MAAC Institute</b>.
+                </p>
+                <p class="text-sm sm:text-base text-gray-800 leading-relaxed">
+                    My work combines creative art direction with business understanding. I enjoy transforming abstract ideas into visual experiences through graphic design, branding, social media content, posters, digital graphics, and visual storytelling.
+                </p>
+            </div>
+
+            <!-- 4 Small Scrapbook Fact Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+                
+                <div class="scrapbook-card bg-[#F8D3D5] p-5 rounded-2xl border-3 border-[#7A1725] shadow-[5px_5px_0px_0px_#7A1725] -rotate-1">
+                    <span class="font-serif-title text-2xl text-[#7A1725] block font-bold">01</span>
+                    <h3 class="font-bold text-sm text-[#580E18] uppercase tracking-wide">CREATIVE THINKER</h3>
+                    <p class="text-xs text-gray-700 mt-1">Approaching design challenges with fresh angles.</p>
+                </div>
+
+                <div class="scrapbook-card bg-[#828E58] text-white p-5 rounded-2xl border-3 border-[#580E18] shadow-[5px_5px_0px_0px_#580E18] rotate-2">
+                    <span class="font-serif-title text-2xl text-[#F7E7A3] block font-bold">02</span>
+                    <h3 class="font-bold text-sm text-[#F7E7A3] uppercase tracking-wide">VISUAL STORYTELLER</h3>
+                    <p class="text-xs text-lime-100 mt-1">Crafting narratives through composition & color.</p>
+                </div>
+
+                <div class="scrapbook-card bg-[#F7E7A3] p-5 rounded-2xl border-3 border-[#7A1725] shadow-[5px_5px_0px_0px_#7A1725] -rotate-2">
+                    <span class="font-serif-title text-2xl text-[#7A1725] block font-bold">03</span>
+                    <h3 class="font-bold text-sm text-[#580E18] uppercase tracking-wide">BUSINESS + DESIGN</h3>
+                    <p class="text-xs text-gray-800 mt-1">BBA foundation ensuring commercial value.</p>
+                </div>
+
+                <div class="scrapbook-card bg-[#C5D0F5] p-5 rounded-2xl border-3 border-[#7A1725] shadow-[5px_5px_0px_0px_#7A1725] rotate-1">
+                    <span class="font-serif-title text-2xl text-[#7A1725] block font-bold">04</span>
+                    <h3 class="font-bold text-sm text-[#580E18] uppercase tracking-wide">ALWAYS LEARNING</h3>
+                    <p class="text-xs text-gray-800 mt-1">MAAC trained in modern industry tools.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 03: SKILLS SECTION ("WHAT I DO") -->
+        <section id="skills" class="olive-grid-pattern p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#580E18] bg-[#FFFDF5] px-4 py-1.5 rounded-full border-2 border-[#7A1725]">
+                    MY CREATIVE TOOLBOX
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#FFFDF5]">
+                    WHAT I DO
+                </h2>
+                <p class="text-xs sm:text-sm text-lime-100 max-w-lg mx-auto">
+                    Design is more than making things look good — it’s about making ideas visible and purposeful.
+                </p>
+            </div>
+
+            <!-- Tilted Skill Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                
+                <!-- Skill 01 -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#580E18] -rotate-1 relative">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-serif-title text-3xl font-bold text-[#7A1725]">01</span>
+                        <i class="fa-solid fa-palette text-2xl text-[#828E58]"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-[#580E18] mb-1">GRAPHIC DESIGN</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Clean, striking visuals tailored for digital and print formats with distinct personality.</p>
+                </div>
+
+                <!-- Skill 02 -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#580E18] rotate-2 relative">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-serif-title text-3xl font-bold text-[#7A1725]">02</span>
+                        <i class="fa-solid fa-gem text-2xl text-[#E96E72]"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-[#580E18] mb-1">BRANDING</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Developing cohesive brand identities, logos, color systems, and brand guidelines.</p>
+                </div>
+
+                <!-- Skill 03 -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#580E18] -rotate-2 relative">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-serif-title text-3xl font-bold text-[#7A1725]">03</span>
+                        <i class="fa-solid fa-hashtag text-2xl text-[#828E58]"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-[#580E18] mb-1">SOCIAL MEDIA DESIGN</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Eye-catching social media templates, carousels, stories, and feed layouts.</p>
+                </div>
+
+                <!-- Skill 04 -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#580E18] rotate-1 relative">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-serif-title text-3xl font-bold text-[#7A1725]">04</span>
+                        <i class="fa-solid fa-scroll text-2xl text-[#E96E72]"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-[#580E18] mb-1">POSTER DESIGN</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">High-impact creative posters, event flyers, and advertisement artwork.</p>
+                </div>
+
+                <!-- Skill 05 -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#580E18] -rotate-1 relative">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-serif-title text-3xl font-bold text-[#7A1725]">05</span>
+                        <i class="fa-solid fa-desktop text-2xl text-[#828E58]"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-[#580E18] mb-1">UI / DIGITAL DESIGN</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">User-centric digital layouts, web interfaces, and interactive prototype concepts.</p>
+                </div>
+
+                <!-- Skill 06 -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#580E18] rotate-2 relative">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-serif-title text-3xl font-bold text-[#7A1725]">06</span>
+                        <i class="fa-solid fa-sliders text-2xl text-[#E96E72]"></i>
+                    </div>
+                    <h3 class="font-extrabold text-base text-[#580E18] mb-1">Packing esign</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Protect Products, Communicate Brand Identity.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 04: SOFTWARE SECTION ("MY CREATIVE TOOLKIT") -->
+        <section id="software" class="bg-[#F8F3E6] p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-10">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#F8D3D5] px-4 py-1.5 rounded-full border border-[#7A1725]">
+                    SOFTWARE KNOWLEDGE
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#580E18]">
+                    MY CREATIVE TOOLKIT
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+                
+                <!-- Photoshop -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-5 rounded-2xl border-3 border-[#7A1725] text-center shadow-[4px_4px_0px_0px_#7A1725]">
+                    <div class="w-12 h-12 mx-auto bg-[#001E36] text-[#31A8FF] rounded-xl flex items-center justify-center font-bold text-xl mb-2 shadow">Ps</div>
+                    <h4 class="font-extrabold text-xs text-[#580E18]">PHOTOSHOP</h4>
+                    <p class="text-[10px] text-gray-600 mt-1">Graphic Design / Editing</p>
+                </div>
+
+                <!-- Illustrator -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-5 rounded-2xl border-3 border-[#7A1725] text-center shadow-[4px_4px_0px_0px_#7A1725]">
+                    <div class="w-12 h-12 mx-auto bg-[#330000] text-[#FF9A00] rounded-xl flex items-center justify-center font-bold text-xl mb-2 shadow">Ai</div>
+                    <h4 class="font-extrabold text-xs text-[#580E18]">ILLUSTRATOR</h4>
+                    <p class="text-[10px] text-gray-600 mt-1">Vector / Branding</p>
+                </div>
+
+                <!-- Premiere Pro -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-5 rounded-2xl border-3 border-[#7A1725] text-center shadow-[4px_4px_0px_0px_#7A1725]">
+                    <div class="w-12 h-12 mx-auto bg-[#00005B] text-[#9999FF] rounded-xl flex items-center justify-center font-bold text-xl mb-2 shadow">Pr</div>
+                    <h4 class="font-extrabold text-xs text-[#580E18]">PREMIERE PRO</h4>
+                    <p class="text-[10px] text-gray-600 mt-1">Video Editing</p>
+                </div>
+
+                <!-- Figma -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-5 rounded-2xl border-3 border-[#7A1725] text-center shadow-[4px_4px_0px_0px_#7A1725]">
+                    <div class="w-12 h-12 mx-auto bg-[#1E1E1E] text-[#F24E1E] rounded-xl flex items-center justify-center font-bold text-xl mb-2 shadow">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+                    <h4 class="font-extrabold text-xs text-[#580E18]">FIGMA</h4>
+                    <p class="text-[10px] text-gray-600 mt-1">UI / Digital Design</p>
+                </div>
+
+                <!-- Canva -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-5 rounded-2xl border-3 border-[#7A1725] text-center shadow-[4px_4px_0px_0px_#7A1725]">
+                    <div class="w-12 h-12 mx-auto bg-gradient-to-tr from-cyan-500 to-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-2 shadow">Ca</div>
+                    <h4 class="font-extrabold text-xs text-[#580E18]">CANVA</h4>
+                    <p class="text-[10px] text-gray-600 mt-1">Social Content</p>
+                </div>
+
+                <!-- Html -->
+                <div class="scrapbook-card bg-[#FFFDF5] p-5 rounded-2xl border-3 border-[#7A1725] text-center shadow-[4px_4px_0px_0px_#7A1725]">
+                    <div class="w-12 h-12 mx-auto bg-[#001E36] text-[#31A8FF] rounded-xl flex items-center justify-center font-bold text-xl mb-2 shadow">Ht</div>
+                    <h4 class="font-extrabold text-xs text-[#580E18]">HTML</h4>
+                    <p class="text-[10px] text-gray-600 mt-1">Web Page Structure & Layout</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 05: EXPERIENCE SECTION ("MY JOURNEY") -->
+        <section id="experience" class="pink-grid-pattern p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#FFFDF5] px-4 py-1.5 rounded-full border-2 border-[#7A1725]">
+                    EDITORIAL TIMELINE
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#580E18]">
+                    MY JOURNEY
+                </h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto relative pl-6 border-l-4 border-dashed border-[#7A1725] space-y-8" id="experienceContainer">
+                
+                <!-- Experience Item 1 -->
+                <div class="relative bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#7A1725]">
+                    <div class="absolute -left-[35px] top-6 w-6 h-6 rounded-full bg-[#7A1725] border-3 border-[#FFFDF5]"></div>
+                    <span class="text-xs font-extrabold text-[#7A1725] bg-[#F8D3D5] px-3 py-1 rounded-full border border-[#7A1725]">2026 — PRESENT</span>
+                    <h3 class="font-serif-title text-2xl text-[#580E18] mt-2">GRAPHIC DESIGN / CREATIVE DESIGN</h3>
+                    <p class="text-xs sm:text-sm text-gray-700 mt-2 leading-relaxed">
+                        Working on graphic design projects, social media visuals, branding, digital content, and creative campaigns for various clients and brand concepts.
+                    </p>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#7A1725]">
+                    <div class="absolute -left-[35px] top-6 w-6 h-6 rounded-full bg-[#828E58] border-3 border-[#FFFDF5]"></div>
+                    <span class="text-xs font-extrabold text-[#FFFDF5] bg-[#828E58] px-3 py-1 rounded-full border border-[#580E18]">2025</span>
+                    <h3 class="font-serif-title text-2xl text-[#580E18] mt-2">DESIGN TRAINING & PRACTICE</h3>
+                    <p class="text-xs sm:text-sm text-gray-700 mt-2 leading-relaxed">
+                        Developing practical skills in graphic design, visual communication, and creative software at MAAC Institute while applying business fundamentals.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Dynamic Add Experience Button for Easy Editing -->
+            <div class="text-center mt-8">
+                <button onclick="addNewExperiencePrompt()" class="bg-[#F7E7A3] hover:bg-yellow-300 text-[#580E18] border-2 border-[#7A1725] text-xs font-extrabold uppercase px-5 py-2.5 rounded-full shadow-[3px_3px_0px_0px_#7A1725] transition-all">
+                    + ADD EXPERIENCE PLACEHOLDER
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 06: EDUCATION SECTION -->
+        <section id="education" class="bg-[#580E18] text-[#FFFDF5] p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#580E18] bg-[#F7E7A3] px-4 py-1.5 rounded-full border border-[#7A1725]">
+                    LEARNING NEVER STOPS
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#F8D3D5]">
+                    MY EDUCATION
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Education Card 01 -->
+                <div class="bg-[#FFFDF5] text-[#262626] p-7 rounded-[32px] border-4 border-[#7A1725] shadow-[8px_8px_0px_0px_#F8D3D5] rotate-[-1deg] relative">
+                    <div class="washi-tape absolute -top-3 left-8 w-24 h-6"></div>
+                    <i class="fa-solid fa-paperclip absolute top-4 right-4 text-2xl text-[#7A1725]"></i>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725]">EDUCATION 01</span>
+                    <h3 class="font-serif-title text-2xl sm:text-3xl text-[#580E18] mt-1">IGNOU</h3>
+                    <p class="font-bold text-sm text-[#828E58] mt-1">Bachelor of Business Administration (BBA)</p>
+                    <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                        Studying key business principles, marketing dynamics, and management strategies to blend business logic directly into visual graphic design.
+                    </p>
+                </div>
+
+                <!-- Education Card 02 -->
+                <div class="bg-[#FFFDF5] text-[#262626] p-7 rounded-[32px] border-4 border-[#7A1725] shadow-[8px_8px_0px_0px_#F8D3D5] rotate-[1deg] relative">
+                    <div class="washi-tape absolute -top-3 right-8 w-24 h-6"></div>
+                    <i class="fa-solid fa-star absolute top-4 right-4 text-2xl text-amber-400"></i>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725]">EDUCATION 02</span>
+                    <h3 class="font-serif-title text-2xl sm:text-3xl text-[#580E18] mt-1">MAAC INSTITUTE</h3>
+                    <p class="font-bold text-sm text-[#828E58] mt-1">Creative Design Training</p>
+                    <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                        Comprehensive hands-on training in industry-standard graphic software, typography composition, digital art direction, and visual storytelling.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 07: PORTFOLIO SHOWCASE SECTION -->
+        <section id="portfolio" class="bg-[#FFFDF5] p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-10">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#F8D3D5] px-4 py-1.5 rounded-full border border-[#7A1725]">
+                    CREATIVE PORTFOLIO
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#580E18]">
+                    THINGS I'VE MADE.
+                </h2>
+                <p class="font-handwriting text-2xl text-[#7A1725] font-semibold">
+                    "A collection of visuals, ideas, and creative experiments."
+                </p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10 max-w-4xl mx-auto" id="portfolioFilterBar">
+                <button onclick="filterPortfolio('ALL')" class="filter-btn active-filter bg-[#7A1725] text-white text-xs font-bold px-4 py-2 rounded-full border-2 border-[#580E18]">ALL</button>
+                <button onclick="filterPortfolio('BRANDING')" class="filter-btn bg-[#F8F3E6] text-[#7A1725] text-xs font-bold px-4 py-2 rounded-full border-2 border-[#7A1725] hover:bg-[#F8D3D5]">BRANDING</button>
+                <button onclick="filterPortfolio('SOCIAL MEDIA')" class="filter-btn bg-[#F8F3E6] text-[#7A1725] text-xs font-bold px-4 py-2 rounded-full border-2 border-[#7A1725] hover:bg-[#F8D3D5]">SOCIAL MEDIA</button>
+                <button onclick="filterPortfolio('POSTERS')" class="filter-btn bg-[#F8F3E6] text-[#7A1725] text-xs font-bold px-4 py-2 rounded-full border-2 border-[#7A1725] hover:bg-[#F8D3D5]">POSTERS</button>
+                <button onclick="filterPortfolio('ADVERTISEMENT')" class="filter-btn bg-[#F8F3E6] text-[#7A1725] text-xs font-bold px-4 py-2 rounded-full border-2 border-[#7A1725] hover:bg-[#F8D3D5]">ADVERTISEMENT</button>
+            </div>
+
+            <!-- Portfolio Projects Masonry Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" id="portfolioGrid">
+                
+                <!-- Project 01 -->
+                <div class="portfolio-item BRANDING scrapbook-card bg-[#F8F3E6] border-3 border-[#7A1725] rounded-3xl overflow-hidden shadow-[6px_6px_0px_0px_#7A1725] cursor-pointer">
+           
+                    <div class="h-48 overflow-hidden relative">
+
+                        <img src="banding image.png" alt="Brand Identity" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-[#7A1725] text-white text-[10px] font-bold px-2.5 py-1 rounded-full">BRANDING</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-mono text-gray-500">PROJECT 01</span>
+                    <a href="BRANDING.pdf">  <h3 class="font-extrabold text-base text-[#580E18] mt-0.5">Brand Identity Concept</h3> </a>
+                        <p class="text-xs text-gray-600 mt-1 line-clamp-2">Visual identity created to build a memorable and consistent brand presence.</p>
+                        <div class="mt-3 text-[#7A1725] font-bold text-xs flex items-center gap-1">
+                            <span>VIEW PROJECT</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 02 -->
+                <div class="portfolio-item SOCIAL MEDIA scrapbook-card bg-[#F8F3E6] border-3 border-[#7A1725] rounded-3xl overflow-hidden shadow-[6px_6px_0px_0px_#7A1725] cursor-pointer"
+                     onclick="openProjectModal('PROJECT 02', 'Social Campaign Assets', 'SOCIAL MEDIA', 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80', 'Engaging social media templates and carousel graphics engineered to drive audience interaction.')">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="Artboard 1.png" alt="Social Media" width="300" height="200">class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-[#828E58] text-white text-[10px] font-bold px-2.5 py-1 rounded-full">SOCIAL MEDIA</span>
+                       
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-mono text-gray-500">PROJECT 02</span>
+                        <a href="matchaaaaa.pdf">
+                        <h3 class="font-extrabold text-base text-[#580E18] mt-0.5">Social Campaign Graphics</h3></a>
+                        <p class="text-xs text-gray-600 mt-1 line-clamp-2">Content strategy and social layouts tailored for Instagram growth.</p>
+                        <div class="mt-3 text-[#7A1725] font-bold text-xs flex items-center gap-1">
+                            <span>VIEW PROJECT</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 03 -->
+                <div class="portfolio-item POSTERS scrapbook-card bg-[#F8F3E6] border-3 border-[#7A1725] rounded-3xl overflow-hidden shadow-[6px_6px_0px_0px_#7A1725] cursor-pointer"
+                     onclick="openProjectModal('PROJECT 03', 'Creative Event Poster', 'POSTERS', 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80', 'Bold typographic poster designed with expressive visual art direction.')">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="Artboard 1 BAG.png" alt="Poster Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-[#F7E7A3] text-[#580E18] text-[10px] font-bold px-2.5 py-1 rounded-full border border-[#7A1725]">POSTERS</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-mono text-gray-500">PROJECT 03</span>
+                        <a href="BAG.pdf">
+                        <h3 class="font-extrabold text-base text-[#580E18] mt-0.5">Advertisment Postes</h3></a>
+                        <p class="text-xs text-gray-600 mt-1 line-clamp-2">High-contrast poster composition merging typography and modern graphics.</p>
+                        <div class="mt-3 text-[#7A1725] font-bold text-xs flex items-center gap-1">
+                            <span>VIEW PROJECT</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 04 -->
+                <div class="portfolio-item ADVERTISEMENT scrapbook-card bg-[#F8F3E6] border-3 border-[#7A1725] rounded-3xl overflow-hidden shadow-[6px_6px_0px_0px_#7A1725] cursor-pointer"
+                     onclick="openProjectModal('PROJECT 04', 'Product Ad Banner', 'ADVERTISEMENT', 'https://images.unsplash.com/photo-1542744094-3a31216994c9?auto=format&fit=crop&w=800&q=80', 'Commercial advertisement banner graphics designed for multi-channel marketing campaigns.')">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="sotm front image.png" alt="Ad Campaign" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-[#C5D0F5] text-[#580E18] text-[10px] font-bold px-2.5 py-1 rounded-full border border-[#7A1725]">ADVERTISEMENT</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-mono text-gray-500">PROJECT 04</span>
+                        <a href="sotm.pdf"></a>
+                        <h3 class="font-extrabold text-base text-[#580E18] mt-0.5">Branding</h3></a>
+                        <p class="text-xs text-gray-600 mt-1 line-clamp-2">Targeted advertisement graphics created for digital product promotion.</p>
+                        <div class="mt-3 text-[#7A1725] font-bold text-xs flex items-center gap-1">
+                            <span>VIEW PROJECT</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 08: SHOWCASE OF TWO WEBSITES -->
+        <section id="websites" class="olive-grid-pattern p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#580E18] bg-[#FFFDF5] px-4 py-1.5 rounded-full border border-[#7A1725]">
+                    DIGITAL EXPERIENCES
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#FFFDF5]">
+                    WEBSITES I CREATED.
+                </h2>
+                <p class="text-xs sm:text-sm text-lime-100">
+                    Design meets interaction — two digital experiences from my creative journey.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- WEBSITE 01 MOCKUP -->
+                <div class="scrapbook-card bg-[#FFFDF5] border-4 border-[#7A1725] rounded-[32px] overflow-hidden shadow-[8px_8px_0px_0px_#580E18]">
+                    <!-- Browser Header Bar -->
+                    <div class="bg-[#F8D3D5] p-3 border-b-3 border-[#7A1725] flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-400 border border-[#7A1725] inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-400 border border-[#7A1725] inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-400 border border-[#7A1725] inline-block"></span>
+                        <div class="ml-2 bg-[#FFFDF5] text-[10px] text-gray-600 px-3 py-0.5 rounded-full border border-[#7A1725] flex-1 truncate font-mono">
+                            https://your-first-website-link.com
+                        </div>
+                    </div>
+                    <!-- Website Preview Image -->
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" 
+                             alt="Website 01 Preview" 
+                             class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x500/828E58/FFFDF5?text=Website+01+Screenshot'">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-[10px] font-bold text-[#828E58] uppercase tracking-widest">WEB DESIGN / 01</span>
+                        <h3 class="font-serif-title text-2xl text-[#580E18]">MY FIRST WEBSITE</h3>
+                        <p class="text-xs text-gray-700 leading-relaxed">
+                            Creative website designed and developed as part of my design journey focusing on clear user hierarchy.
+                        </p>
+                        <a href="https://your-first-website-link.com" target="_blank" class="inline-flex items-center gap-2 bg-[#7A1725] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow hover:bg-[#580E18] transition-colors">
+                            <span>VIEW WEBSITE</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- WEBSITE 02 MOCKUP -->
+                <div class="scrapbook-card bg-[#FFFDF5] border-4 border-[#7A1725] rounded-[32px] overflow-hidden shadow-[8px_8px_0px_0px_#580E18]">
+                    <!-- Browser Header Bar -->
+                    <div class="bg-[#C5D0F5] p-3 border-b-3 border-[#7A1725] flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-400 border border-[#7A1725] inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-400 border border-[#7A1725] inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-400 border border-[#7A1725] inline-block"></span>
+                        <div class="ml-2 bg-[#FFFDF5] text-[10px] text-gray-600 px-3 py-0.5 rounded-full border border-[#7A1725] flex-1 truncate font-mono">
+                            https://your-second-website-link.com
+                        </div>
+                    </div>
+                    <!-- Website Preview Image -->
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                             alt="Website 02 Preview" 
+                             class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x500/7A1725/FFFDF5?text=Website+02+Screenshot'">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <span class="text-[10px] font-bold text-[#7A1725] uppercase tracking-widest">WEB DESIGN / 02</span>
+                        <h3 class="font-serif-title text-2xl text-[#580E18]">MY SECOND WEBSITE</h3>
+                        <p class="text-xs text-gray-700 leading-relaxed">
+                            Another responsive digital experience created with a focus on bold visual layout and intuitive usability.
+                        </p>
+                        <a href="https://your-second-website-link.com" target="_blank" class="inline-flex items-center gap-2 bg-[#7A1725] text-white text-xs font-bold px-5 py-2.5 rounded-full shadow hover:bg-[#580E18] transition-colors">
+                            <span>VIEW WEBSITE</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 09: DESIGN PROCESS -->
+        <section class="bg-[#F8F3E6] p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#F8D3D5] px-4 py-1.5 rounded-full border border-[#7A1725]">
+                    CREATIVE METHODOLOGY
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl text-[#580E18]">
+                    HOW I CREATE.
+                </h2>
+            </div>
+
+            <!-- Sticky Note Steps Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                
+                <div class="scrapbook-card bg-[#F8D3D5] p-6 rounded-2xl border-3 border-[#7A1725] shadow-[5px_5px_0px_0px_#7A1725] rotate-[-2deg] flex flex-col justify-between h-48">
+                    <span class="font-serif-title text-3xl text-[#7A1725] font-bold">01</span>
+                    <div>
+                        <h3 class="font-extrabold text-base text-[#580E18]">RESEARCH</h3>
+                        <p class="text-xs text-gray-700 mt-1">Understanding client objectives & target audience context.</p>
+                    </div>
+                </div>
+
+                <div class="scrapbook-card bg-[#C5D0F5] p-6 rounded-2xl border-3 border-[#7A1725] shadow-[5px_5px_0px_0px_#7A1725] rotate-[2deg] flex flex-col justify-between h-48">
+                    <span class="font-serif-title text-3xl text-[#7A1725] font-bold">02</span>
+                    <div>
+                        <h3 class="font-extrabold text-base text-[#580E18]">IDEATION</h3>
+                        <p class="text-xs text-gray-700 mt-1">Moodboarding, sketching layout concepts, and visual direction.</p>
+                    </div>
+                </div>
+
+                <div class="scrapbook-card bg-[#828E58] text-white p-6 rounded-2xl border-3 border-[#580E18] shadow-[5px_5px_0px_0px_#580E18] rotate-[-1deg] flex flex-col justify-between h-48">
+                    <span class="font-serif-title text-3xl text-[#F7E7A3] font-bold">03</span>
+                    <div>
+                        <h3 class="font-extrabold text-base text-[#F7E7A3]">DESIGN</h3>
+                        <p class="text-xs text-lime-100 mt-1">Crafting pixel-perfect layouts using Photoshop & Illustrator.</p>
+                    </div>
+                </div>
+
+                <div class="scrapbook-card bg-[#F7E7A3] p-6 rounded-2xl border-3 border-[#7A1725] shadow-[5px_5px_0px_0px_#7A1725] rotate-[1deg] flex flex-col justify-between h-48">
+                    <span class="font-serif-title text-3xl text-[#7A1725] font-bold">04</span>
+                    <div>
+                        <h3 class="font-extrabold text-base text-[#580E18]">REFINE</h3>
+                        <p class="text-xs text-gray-800 mt-1">Polishing details, color accuracy, and finalizing final deliverables.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 10: QUOTE & RESUME SECTION -->
+        <section class="bg-[#7A1725] text-[#FFFDF5] p-8 sm:p-14 border-b-4 border-[#580E18] text-center space-y-6 relative overflow-hidden">
+            
+            <div class="max-w-2xl mx-auto bg-[#FFFDF5] text-[#262626] p-8 rounded-[36px] border-4 border-[#580E18] shadow-[10px_10px_0px_0px_#F8D3D5] space-y-4 relative">
+                <div class="washi-tape absolute -top-3 left-1/2 -translate-x-1/2 w-36 h-6"></div>
+                
+                <h2 class="font-serif-title text-2xl sm:text-4xl text-[#580E18] leading-tight pt-2">
+                    "Good design doesn't just look beautiful. It tells a story."
+                </h2>
+                <p class="font-handwriting text-2xl text-[#7A1725] font-bold">
+                    — ANJALI PARIHAR
+                </p>
+                <div class="inline-block bg-[#F8D3D5] text-[#7A1725] text-xs font-black px-4 py-1.5 rounded-full border border-[#7A1725]">
+                    DESIGN WITH PURPOSE ✦
+                </div>
+            </div>
+
+            <!-- Download Resume CTA -->
+            <div class="pt-4 max-w-md mx-auto space-y-3">
+                <p class="text-xs text-pink-200">Want to know more about my creative journey?</p>
+                <a href="RESUME (ANJALI).png" download class="inline-flex items-center gap-2 bg-[#F7E7A3] hover:bg-yellow-300 text-[#580E18] border-2 border-[#580E18] font-black text-xs uppercase tracking-wider px-8 py-3.5 rounded-full shadow-[4px_4px_0px_0px_#580E18] transition-all hover:translate-x-0.5 hover:translate-y-0.5">
+                    <i class="fa-solid fa-file-arrow-down text-base"></i>
+                    <span>DOWNLOAD RESUME (PDF)</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 11: CONTACT SECTION -->
+        <section id="contact" class="pink-grid-pattern p-6 sm:p-12 border-b-4 border-[#7A1725] relative">
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                <!-- Contact Info Left Column -->
+                <div class="md:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-[#7A1725] bg-[#FFFDF5] px-3 py-1 rounded-full border border-[#7A1725]">
+                            GET IN TOUCH
+                        </span>
+                        <h2 class="font-serif-title text-3xl sm:text-5xl text-[#580E18] mt-3">
+                            LET'S CREATE SOMETHING.
+                        </h2>
+                        <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                            Have an idea, project, or collaboration in mind? Let's turn it into something visual.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 font-semibold text-xs text-[#580E18]">
+                        <div class="bg-[#FFFDF5] p-3.5 rounded-2xl border-2 border-[#7A1725] flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-base text-[#7A1725]"></i>
+                            <span>EMAIL: <span class="font-normal text-gray-700">Pariharanjali077@gmail.com</span></span>
+                        </div>
+                        <div class="bg-[#FFFDF5] p-3.5 rounded-2xl border-2 border-[#7A1725] flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-base text-[#7A1725]"></i>
+                            <span>PHONE: <span class="font-normal text-gray-700"> +91  807608477</span></span>
+                        </div>
+                        <div class="bg-[#FFFDF5] p-3.5 rounded-2xl border-2 border-[#7A1725] flex items-center gap-3">
+                            <i class="fa-brands fa-instagram text-base text-[#7A1725]"></i>
+                            <span>INSTAGRAM: <span class="font-normal text-gray-700">_anjalithakur_08</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Right Column -->
+                <div class="md:col-span-7 bg-[#FFFDF5] border-4 border-[#7A1725] p-6 sm:p-8 rounded-[32px] shadow-[8px_8px_0px_0px_#7A1725] relative">
+                    <div class="washi-tape absolute -top-3 right-8 w-28 h-6"></div>
+
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-[#580E18] uppercase mb-1">YOUR NAME</label>
+                            <input type="text" required placeholder="Enter your full name" class="w-full p-3 bg-[#F8F3E6] border-2 border-[#7A1725] rounded-xl text-xs focus:outline-none focus:bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-[#580E18] uppercase mb-1">YOUR EMAIL</label>
+                            <input type="email" required placeholder="Enter your email address" class="w-full p-3 bg-[#F8F3E6] border-2 border-[#7A1725] rounded-xl text-xs focus:outline-none focus:bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-[#580E18] uppercase mb-1">PROJECT TYPE</label>
+                            <select class="w-full p-3 bg-[#F8F3E6] border-2 border-[#7A1725] rounded-xl text-xs focus:outline-none">
+                                <option>Graphic Design & Posters</option>
+                                <option>Brand Identity & Logo</option>
+                                <option>Social Media Campaign</option>
+                                <option>UI / Website Design</option>
+                                <option>Other Creative Project</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-[#580E18] uppercase mb-1">MESSAGE</label>
+                            <textarea rows="3" required placeholder="Tell me about your project ideas..." class="w-full p-3 bg-[#F8F3E6] border-2 border-[#7A1725] rounded-xl text-xs focus:outline-none focus:bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-[#7A1725] hover:bg-[#580E18] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-[4px_4px_0px_0px_#580E18] transition-all">
+                            SEND MESSAGE →
+                        </button>
+                    </form>
+                    
+                    <!-- Submission Confirmation Box -->
+                    <div id="formSuccessMessage" class="hidden mt-4 p-4 bg-green-100 border-2 border-green-600 rounded-xl text-xs text-green-800 font-bold text-center">
+                        ✓ Message received! Thank you for reaching out, Anjali will get back to you soon.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 12: FOOTER -->
+        <footer class="bg-[#FFFDF5] p-6 sm:p-10 text-center space-y-6">
+            
+            <div class="space-y-1">
+                <h3 class="font-serif-title text-2xl text-[#580E18] font-bold">ANJALI PARIHAR</h3>
+                <p class="text-xs font-bold text-[#7A1725] tracking-widest uppercase">GRAPHIC DESIGNER & CREATIVE STRATEGIST</p>
+                <p class="font-handwriting text-xl text-gray-600">"Designed with curiosity. Created with purpose."</p>
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="flex justify-center items-center gap-6 text-sm font-extrabold text-[#7A1725]">
+                <a href="#" class="hover:underline">INSTAGRAM</a>
+                <a href="#" class="hover:underline">BEHANCE</a>
+                <a href="#" class="hover:underline">LINKEDIN</a>
+                <a href="#contact" class="hover:underline">EMAIL</a>
+            </div>
+
+            <div class="pt-6 border-t-2 border-red-100 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-500 gap-3">
+                <span>© 2026 Anjali Parihar. All Rights Reserved.</span>
+                <a href="#hero" class="text-[#7A1725] font-bold hover:underline flex items-center gap-1">
+                    <span>BACK TO TOP</span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- PORTFOLIO DETAIL MODAL -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-[#FFFDF5] border-4 border-[#7A1725] rounded-[36px] max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-4">
+            
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 w-9 h-9 bg-[#F8D3D5] text-[#7A1725] font-bold rounded-full border-2 border-[#7A1725] flex items-center justify-center hover:bg-[#7A1725] hover:text-white transition-colors">
+                &times;
+            </button>
+
+            <span id="modalCategory" class="text-[10px] font-bold text-[#7A1725] bg-[#F8D3D5] px-3 py-1 rounded-full border border-[#7A1725] inline-block uppercase">
+                CATEGORY
+            </span>
+
+            <h3 id="modalTitle" class="font-serif-title text-2xl sm:text-4xl text-[#580E18]">
+                Project Title
+            </h3>
+
+            <div class="rounded-2xl border-2 border-[#7A1725] overflow-hidden max-h-72">
+                <img id="modalImage" src="" alt="Project Image" class="w-full h-full object-cover">
+            </div>
+
+            <div class="space-y-2">
+                <h4 class="font-bold text-xs text-[#580E18] uppercase">CONCEPT & DESCRIPTION</h4>
+                <p id="modalDesc" class="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    Detailed project concept narrative...
+                </p>
+            </div>
+
+            <div class="pt-2">
+                <button onclick="closeProjectModal()" class="w-full py-2.5 bg-[#7A1725] text-white text-xs font-bold rounded-xl border border-[#580E18]">
+                    CLOSE PREVIEW
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT CONTROLS -->
+    <script>
+        // Mobile Navigation Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Handle User Photo Upload Preview Directly In Browser
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('userImageDisplay').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Add Placeholder Experience Item
+        function addNewExperiencePrompt() {
+            const container = document.getElementById('experienceContainer');
+            const newYear = prompt("Enter Year (e.g. 2027):", "2027");
+            const newTitle = prompt("Enter Role Title:", "CREATIVE BRANDING ASSISTANT");
+            const newDesc = prompt("Enter Brief Description:", "Created graphic concepts and social content.");
+
+            if (newYear && newTitle) {
+                const newItem = document.createElement('div');
+                newItem.className = 'relative bg-[#FFFDF5] p-6 rounded-3xl border-3 border-[#7A1725] shadow-[6px_6px_0px_0px_#7A1725]';
+                newItem.innerHTML = `
+                    <div class="absolute -left-[35px] top-6 w-6 h-6 rounded-full bg-[#7A1725] border-3 border-[#FFFDF5]"></div>
+                    <span class="text-xs font-extrabold text-[#7A1725] bg-[#F8D3D5] px-3 py-1 rounded-full border border-[#7A1725]">${newYear}</span>
+                    <h3 class="font-serif-title text-2xl text-[#580E18] mt-2">${newTitle}</h3>
+                    <p class="text-xs sm:text-sm text-gray-700 mt-2 leading-relaxed">${newDesc || 'Working on graphic projects.'}</p>
+                `;
+                container.appendChild(newItem);
+            }
+        }
+
+        // Portfolio Category Filter Logic
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.innerText === category) {
+                    btn.classList.add('bg-[#7A1725]', 'text-white');
+                    btn.classList.remove('bg-[#F8F3E6]', 'text-[#7A1725]');
+                } else {
+                    btn.classList.remove('bg-[#7A1725]', 'text-white');
+                    btn.classList.add('bg-[#F8F3E6]', 'text-[#7A1725]');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'ALL' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Controls
+        function openProjectModal(num, title, category, imgSrc, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalCategory').innerText = category;
+            document.getElementById('modalImage').src = imgSrc;
+            document.getElementById('modalDesc').innerText = desc;
+            
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('modal-active');
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('modal-active');
+        }
+
+        // Form Submit Simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('formSuccessMessage');
+            msg.classList.remove('hidden');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
